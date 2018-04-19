@@ -1,6 +1,6 @@
 #pragma once
 #include <stdint.h>
-#include <initializer_list>
+#include <vector>
 
 constexpr int null = INT32_MIN;
 
@@ -12,6 +12,7 @@ struct TreeNode
 	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-extern TreeNode * makeTree(const std::initializer_list<int> && init);
+extern TreeNode * makeTree(const std::vector<int> & values, int i = 0);
+extern TreeNode * makeTree(const std::vector<int> && values);
 extern void delTree(TreeNode * root);
 extern void showTree(const TreeNode *root);
