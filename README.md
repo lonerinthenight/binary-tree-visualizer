@@ -44,3 +44,9 @@ A tool to visualize binary trees based on GraphViz.
     The result is shown below:
 
     ![](demo.png)
+
+- Delete the binary tree
+    ```C++
+    delTree(root);
+    root = nullptr;
+    ```
