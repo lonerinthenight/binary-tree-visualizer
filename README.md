@@ -5,6 +5,7 @@ A tool to visualize binary trees based on GraphViz.
 ## Requirements
 
 - GraphViz
+
     Download: http://www.graphviz.org/download/
 
     **Note:** GraphViz must be added into `PATH` environment variable.
