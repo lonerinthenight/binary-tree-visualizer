@@ -11,7 +11,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="binarytree-visualizer.cpp">
+    <ClCompile Include="binary-tree-visualizer.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="demo.cpp">
