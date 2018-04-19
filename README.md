@@ -1,12 +1,12 @@
 # binarytree-visualizer
 
-This is a tool to visualize binary trees using GraphViz.
+A tool to visualize binary trees based on GraphViz.
 
 ## Requirements
 
 - GraphViz
     Download: http://www.graphviz.org/download/
-    **Note:** Remember to add GraphViz to `PATH` environment variable.
+    **Note:** GraphViz must be added into `PATH` environment variable.
 
 ## Usage
 
@@ -41,4 +41,5 @@ This is a tool to visualize binary trees using GraphViz.
     showTree(root);
     ```
     The result is shown below:
+
     ![](demo.png)
