@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
-#include <exception>
+#include <stdexcept>
 #include "linkedlist.hpp"
 
 using namespace std;
@@ -19,13 +19,13 @@ void delList(ListNode * p)
 void showList(const ListNode *head)
 {
 	if (head == nullptr)
-		throw exception("The list node is null!");
+		throw runtime_error("The list node is null!");
 
 	FILE * const fout = fopen("list.dot", "w");
 	fprintf(fout, "digraph {\n");
 	fprintf(fout, "    graph[ordering=\"out\", rankdir=LR];\n");
 
-	int length = 0;	// 单链表的长度
+	int length = 0;	// 鍗曢摼琛ㄧ殑闀垮害
 	for (const ListNode *p = head; p != nullptr; p = p->next)
 		fprintf(fout, "    Node%d[shape=\"circle\", label=\"%d\"];\n", length++, p->val);
 	for (int i = 1; i < length; i++)
@@ -34,7 +34,11 @@ void showList(const ListNode *head)
 	fprintf(fout, "}\n");
 	fclose(fout);
 
-	// 调用GraphViz
+	// 璋冪敤GraphViz
 	system("dot list.dot | neato -n -Tpng -o list.png");
+
+	// 鏄剧ず鍥剧墖
+#ifdef _WIN32
 	system("list.png");
+#endif
 }
