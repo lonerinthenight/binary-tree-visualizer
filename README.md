@@ -12,7 +12,7 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 
 ## Usage
 
-#### Binary Tree
+### Binary Tree
 
 - Definition of TreeNode
     ```C++
@@ -59,7 +59,7 @@ A tool to visualize binary trees and linked lists based on GraphViz.
     root = nullptr;
     ```
 
-#### Linked List
+### Linked List
 
 - Definition of ListNode
     ```C++
