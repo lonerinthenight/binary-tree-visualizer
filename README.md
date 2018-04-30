@@ -75,16 +75,7 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 - Build a linked list
 
     In order to build the following linked list:
-    ```flow
-    5=>start: 5
-    2=>start: 2
-    0=>start: 0
-    1_1=>start: 1
-    3=>start: 3
-    1_2=>start: 1
-    4=>end: 4
-    5(right)->2(right)->0(right)->1_1(right)->3(right)->1_2(right)->4
-    ```
+    > 5 -> 2 -> 0 -> 1 -> 3 -> 1 -> 4
 
     We may call function `makeTree` like this:
     ```C++
