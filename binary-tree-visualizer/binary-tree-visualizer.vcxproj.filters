@@ -17,9 +17,15 @@
     <ClCompile Include="demo.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="linked-list-visualizer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binarytree.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="linkedlist.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

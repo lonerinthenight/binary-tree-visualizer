@@ -153,9 +153,11 @@
   <ItemGroup>
     <ClCompile Include="binary-tree-visualizer.cpp" />
     <ClCompile Include="demo.cpp" />
+    <ClCompile Include="linked-list-visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binarytree.hpp" />
+    <ClInclude Include="linkedlist.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

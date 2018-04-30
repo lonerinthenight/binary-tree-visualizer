@@ -1,4 +1,5 @@
 #include "binarytree.hpp"
+#include "linkedlist.hpp"
 
 int main()
 {
@@ -13,5 +14,13 @@ int main()
 	showTree(root);
 	// delete the binary tree.
 	delTree(root);
+
+	// Build a linked list like this:
+	// 5 -> 2 -> 0 -> 1 -> 3 -> 1 -> 4 -> NULL
+	ListNode *head = makeList({ 5,2,0,1,3,1,4 });
+	// visualize the linked list using GraphViz.
+	showList(head);
+	// delete the linked list.
+	delList(head);
 	return 0;
 }
