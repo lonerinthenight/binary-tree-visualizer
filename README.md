@@ -46,7 +46,6 @@ A tool to visualize binary trees and linked lists based on GraphViz.
     >         2   7
     >        / \   \
     >       1   4   8
-
     We may call function `makeTree` like this:  
     ```c++
     TreeNode *root = makeTree({ 5,2,7,1,4,null,8 });
@@ -81,7 +80,8 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 
 - Build a linked list  
     In order to build the following linked list:  
-    > 5 -> 2 -> 0 -> 1 -> 3 -> 1 -> 4  
+    > 5 -> 2 -> 0 -> 1 -> 3 -> 1 -> 4
+
     We may call function `makeList` like this:  
     ```c++
     ListNode *head = makeList({ 5,2,0,1,3,1,4 });
