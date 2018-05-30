@@ -6,7 +6,7 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 
 - GraphViz
 
-    Download: http://www.graphviz.org/download/
+    Download: [http://www.graphviz.org/download/](http://www.graphviz.org/download/)
 
     **Note:** GraphViz must be added into `PATH` environment variable.
 
@@ -15,11 +15,8 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 ### Microsoft Visual Studio
 
 1. Copy `binarytree.hpp`, `linkedlist.hpp`, `binary-tree-visualizer.cpp` and `linked-list-visualizer.cpp` to your project folder.
-
 2. Add `binary-tree-visualizer.cpp` and `linked-list-visualizer.cpp` to source files and add `binarytree.hpp` and `linkedlist.hpp` to header files.
-
 3. `#include "binarytree.hpp"` if you need to visualize binary trees, or `#include "linkedlist.hpp"` if you need to visualize linked lists.
-
 4. Build and run your code.
 
 ### GNU GCC
