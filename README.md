@@ -29,7 +29,6 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 2. `#include "binarytree.hpp"` if you need to visualize binary trees, or `#include "linkedlist.hpp"` if you need to visualize linked lists.
 
 3. Assumed that your source file is `demo.cpp`, build your source code and the visualizer as the following command shows.
-
     ```bash
     g++ -O2 -std=c++11 binary-tree-visualizer.cpp linked-list-visualizer.cpp demo.cpp -o demo
     ```
@@ -38,7 +37,6 @@ A tool to visualize binary trees and linked lists based on GraphViz.
     ```bash
     ./demo
     ```
-
     The diagram will be generated in the folder of your project.
 
 ## Usage
@@ -46,7 +44,8 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 ### Binary Tree
 
 - Definition of TreeNode
-    ```C++
+
+    ```c++
     // This is the same definition in Leetcode.
     struct TreeNode
     {
@@ -60,32 +59,31 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 - Build a binary tree
 
     In order to build the following binary tree:
-    >           5
-    >          / \
-    >         2   7
-    >        / \   \
-    >       1   4   8
-
+    ```
+                5
+               / \
+              2   7
+             / \   \
+            1   4   8
+    ```
     We may call function `makeTree` like this:
-    ```C++
+    ```c++
     TreeNode *root = makeTree({ 5,2,7,1,4,null,8 });
     ```
-
     **Note:** `null` represents an empty node. This is compatible with leetcode.
 
 - Visualize the binary tree
 
     Call function `showTree` like this:
-    ```C++
+    ```c++
     showTree(root);
     ```
-
     The result is shown below:
-
-    ![](tree.png)
+    ![Tree](tree.png)
 
 - Delete the binary tree
-    ```C++
+
+    ```c++
     delTree(root);
     root = nullptr;
     ```
@@ -93,7 +91,8 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 ### Linked List
 
 - Definition of ListNode
-    ```C++
+
+    ```c++
     // This is the same definition in Leetcode.
     struct ListNode
     {
@@ -106,26 +105,26 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 - Build a linked list
 
     In order to build the following linked list:
-    > 5 -> 2 -> 0 -> 1 -> 3 -> 1 -> 4
-
+    ```
+    5 -> 2 -> 0 -> 1 -> 3 -> 1 -> 4
+    ```
     We may call function `makeList` like this:
-    ```C++
+    ```c++
     ListNode *head = makeList({ 5,2,0,1,3,1,4 });
     ```
 
 - Visualize the linked list
 
     Call function `showList` like this:
-    ```C++
+    ```c++
     showList(head);
     ```
-
     The result is shown below:
-
-    ![](list.png)
+    ![Linked List](list.png)
 
 - Delete the linked list
-    ```C++
+
+    ```c++
     delList(head);
     head = nullptr;
     ```
