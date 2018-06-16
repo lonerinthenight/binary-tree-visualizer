@@ -72,7 +72,7 @@ A tool to visualize binary trees and linked lists based on GraphViz.
     ```c++
     showTree(root);
     ```
-    The result is shown below:
+    The result is shown below:  
     ![Tree](tree.png)
 
 - Delete the binary tree
@@ -113,7 +113,7 @@ A tool to visualize binary trees and linked lists based on GraphViz.
     ```c++
     showList(head);
     ```
-    The result is shown below:
+    The result is shown below:  
     ![Linked List](list.png)
 
 - Delete the linked list
