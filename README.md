@@ -14,16 +14,16 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 
 ### Microsoft Visual Studio
 
-1. Copy [binarytree.hpp](binarytree.hpp), [linkedlist.hpp](linkedlist.hpp), [binary-tree-visualizer.cpp](binary-tree-visualizer.cpp) and [linked-list-visualizer.cpp](linked-list-visualizer.cpp) to your project folder.
-2. Add [binary-tree-visualizer.cpp](binary-tree-visualizer.cpp) and [linked-list-visualizer.cpp](linked-list-visualizer.cpp) to source files and add [binarytree.hpp](binarytree.hpp) and [linkedlist.hpp](linkedlist.hpp) to header files.
+1. Copy [binarytree.hpp](binary-tree-visualizer/binarytree.hpp), [linkedlist.hpp](binary-tree-visualizer/linkedlist.hpp), [binary-tree-visualizer.cpp](binary-tree-visualizer/binary-tree-visualizer.cpp) and [linked-list-visualizer.cpp](binary-tree-visualizer/linked-list-visualizer.cpp) to your project folder.
+2. Add [binary-tree-visualizer.cpp](binary-tree-visualizer/binary-tree-visualizer.cpp) and [linked-list-visualizer.cpp](binary-tree-visualizer/linked-list-visualizer.cpp) to source files and add [binarytree.hpp](binary-tree-visualizer/binarytree.hpp) and [linkedlist.hpp](binary-tree-visualizer/linkedlist.hpp) to header files.
 3. `#include "binarytree.hpp"` if you need to visualize binary trees, or `#include "linkedlist.hpp"` if you need to visualize linked lists.
 4. Build and run your code.
 
 ### GNU GCC
 
-1. Copy [binarytree.hpp](binarytree.hpp), [linkedlist.hpp](linkedlist.hpp), [binary-tree-visualizer.cpp](binary-tree-visualizer.cpp) and [linked-list-visualizer.cpp](linked-list-visualizer.cpp) to your project folder.
+1. Copy [binarytree.hpp](binary-tree-visualizer/binarytree.hpp), [linkedlist.hpp](binary-tree-visualizer/linkedlist.hpp), [binary-tree-visualizer.cpp](binary-tree-visualizer/binary-tree-visualizer.cpp) and [linked-list-visualizer.cpp](binary-tree-visualizer/linked-list-visualizer.cpp) to your project folder.
 2. `#include "binarytree.hpp"` if you need to visualize binary trees, or `#include "linkedlist.hpp"` if you need to visualize linked lists.
-3. Assumed that your source file is `demo.cpp`, build your source code and the visualizer as the following command shows.
+3. Assumed that your source file is [demo.cpp](binary-tree-visualizer/demo.cpp), build your source code and the visualizer as the following command shows.
     ```bash
     g++ -O2 -std=c++11 binary-tree-visualizer.cpp linked-list-visualizer.cpp demo.cpp -o demo
     ```
