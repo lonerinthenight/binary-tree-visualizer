@@ -1,4 +1,6 @@
 language: c++
+install:
+  - sudo apt-get install graphviz
 script:
   - cd binary-tree-visualizer
   - make
