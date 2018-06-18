@@ -2,3 +2,4 @@ language: c++
 script:
   - cd binary-tree-visualizer
   - make
+  - ./demo
