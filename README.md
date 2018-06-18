@@ -1,5 +1,7 @@
 # Binary Tree and Linked List Visualizer
 
+![Travis-CI](https://travis-ci.org/haotian-wang/binary-tree-visualizer.svg?branch=master)
+
 A tool to visualize binary trees and linked lists based on GraphViz.
 
 ## Requirements
