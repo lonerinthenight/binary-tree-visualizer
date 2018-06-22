@@ -8,9 +8,12 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 
 - GraphViz
 
-    Download: [http://www.graphviz.org/download/](http://www.graphviz.org/download/)
-
-    **Note:** GraphViz must be added into `PATH` environment variable.
+    Download: [http://www.graphviz.org/download/](http://www.graphviz.org/download/)  
+    **Note:** GraphViz must be added into `PATH` environment variable.  
+    On [Ubuntu](https://www.ubuntu.com), it can be installed by APT tools:
+    ```bash
+    sudo apt install graphviz
+    ```
 
 ## Build
 
