@@ -1,11 +1,13 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
+#include "binarytree.hpp"
+#include <cstdio>
 #include <cstring>
 #include <cstdlib>
 #include <vector>
 #include <queue>
+#include <sstream>
 #include <stdexcept>
 #include <unordered_map>
-#include "binarytree.hpp"
 #ifdef _MSC_VER
 #include <io.h>
 #define access _access
@@ -91,7 +93,7 @@ N {
 })";
 
 
-TreeNode * makeTree(const vector<int> & values, int i)
+TreeNode * makeTree(const vector<int> & values, int i) noexcept
 {
 	if (i >= values.size() || values[i] == null)
 		return nullptr;
@@ -99,12 +101,6 @@ TreeNode * makeTree(const vector<int> & values, int i)
 	root->left = makeTree(values, i * 2 + 1);
 	root->right = makeTree(values, i * 2 + 2);
 	return root;
-}
-
-
-TreeNode * makeTree(const vector<int> && values)
-{
-	return makeTree(values, 0);
 }
 
 
@@ -121,7 +117,7 @@ void delTree(TreeNode * root)
 void showTree(const TreeNode *root)
 {
 	if (root == nullptr)
-		throw runtime_error("The tree node is null!");
+		throw invalid_argument("The tree node is null!");
 
 	// 判断是否存在binarytree.gvpr，若不存在则创建一个
 	if (access("binarytree.gvpr", 0))
@@ -186,10 +182,16 @@ void showTree(const TreeNode *root)
 	fclose(fout);
 
 	// 调用GraphViz
-	system("dot tree.dot | gvpr -c -f binarytree.gvpr | neato -n -Tpng -o tree.png");
-
+	if (int ret = system("dot tree.dot | gvpr -c -f binarytree.gvpr | neato -n -Tpng -o tree.png"))
+	{
+		stringstream ss;
+		ss << "GraphViz command failed exit code " << ret;
+		throw runtime_error(ss.str());
+	}
 	// 显示图片
 #ifdef _WIN32
 	system("tree.png");
+#else
+	printf("Graph of the binary tree has been written to tree.png successfully.\n");
 #endif
 }

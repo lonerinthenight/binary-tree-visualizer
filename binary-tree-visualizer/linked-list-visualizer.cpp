@@ -1,8 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
+#include "linkedlist.hpp"
 #include <cstdio>
 #include <cstdlib>
+#include <sstream>
 #include <stdexcept>
-#include "linkedlist.hpp"
 
 using namespace std;
 
@@ -16,11 +17,10 @@ void delList(ListNode * p)
 	}
 }
 
-
 void showList(const ListNode *head)
 {
 	if (head == nullptr)
-		throw runtime_error("The list node is null!");
+		throw invalid_argument("The list node is null!");
 
 	FILE * const fout = fopen("list.dot", "w");
 	fprintf(fout, "digraph {\n");
@@ -36,10 +36,17 @@ void showList(const ListNode *head)
 	fclose(fout);
 
 	// 调用GraphViz
-	system("dot list.dot | neato -n -Tpng -o list.png");
+	if(int ret = system("dot list.dot | neato -n -Tpng -o list.png"))
+	{
+		stringstream ss;
+		ss << "GraphViz command failed exit code " << ret;
+		throw runtime_error(ss.str());
+	}
 
 	// 显示图片
 #ifdef _WIN32
 	system("list.png");
+#else
+	printf("Graph of the linked list has been written to list.png successfully.\n");
 #endif
 }

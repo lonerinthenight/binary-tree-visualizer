@@ -1,7 +1,14 @@
-demo:
-	g++ -O3 -std=c++11 binary-tree-visualizer.cpp linked-list-visualizer.cpp demo.cpp -o demo
+TARGET := demo
+SRCS  := $(wildcard *.cpp)
+OBJS   := $(SRCS:.cpp=.o)
+
+$(TARGET): $(OBJS)
+	$(CXX) *.o -o $@
+
+%.o: %.cpp
+	$(CXX) -c -O3 -std=c++11 $< -o $@
 
 .PHONY: clean
 
 clean:
-	@$(RM) -f demo binarytree.gvpr tree.dot tree.png list.dot list.png
+	@$(RM) $(TARGET) $(OBJS) binarytree.gvpr tree.dot tree.png list.dot list.png
