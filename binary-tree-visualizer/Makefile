@@ -1,5 +1,5 @@
 TARGET := demo
-SRCS  := $(wildcard *.cpp)
+SRCS   := $(wildcard *.cpp)
 OBJS   := $(SRCS:.cpp=.o)
 
 $(TARGET): $(OBJS)
