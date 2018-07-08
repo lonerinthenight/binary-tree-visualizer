@@ -19,7 +19,7 @@ struct ListNode
 	 * 
 	 * @param x Value of the list node
 	 */
-	ListNode(int x) : val(x), next(nullptr) {}
+	ListNode(int x) noexcept : val(x), next(nullptr) {}
 };
 
 /**
@@ -30,7 +30,7 @@ struct ListNode
  * @return            The head of the list
  */
 template <typename Container>
-ListNode *makeList(const Container & values)
+ListNode *makeList(const Container & values) noexcept
 {
 	ListNode dummy(0), *p = &dummy;
 	for (int value : values)
@@ -50,7 +50,7 @@ ListNode *makeList(const Container & values)
  * @param values  An initializer list
  * @return        The head of the list
  */
-inline ListNode *makeList(std::initializer_list<int> && values)
+inline ListNode *makeList(std::initializer_list<int> && values) noexcept
 {
 	return makeList(values);
 }
@@ -62,7 +62,7 @@ inline ListNode *makeList(std::initializer_list<int> && values)
  *
  * @note We recommend you to set `p` to `nullptr` after deleting it.
  */
-extern void delList(ListNode *head);
+extern void delList(ListNode *head) noexcept;
 
 /**
  * @brief Visualize a binary tree using GraphViz

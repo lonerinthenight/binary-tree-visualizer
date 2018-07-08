@@ -31,7 +31,7 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 2. `#include "binarytree.hpp"` if you need to visualize binary trees, or `#include "linkedlist.hpp"` if you need to visualize linked lists.
 3. Assumed that your source file is [demo.cpp](binary-tree-visualizer/demo.cpp), build your source code and the visualizer as the following command shows.
     ```bash
-    g++ -O2 -std=c++11 binary-tree-visualizer.cpp linked-list-visualizer.cpp demo.cpp -o demo
+    g++ -O3 -std=c++11 binary-tree-visualizer.cpp linked-list-visualizer.cpp demo.cpp -o demo
     ```
 4. Run your code
     ```bash
@@ -59,16 +59,29 @@ A tool to visualize binary trees and linked lists based on GraphViz.
 - Build a binary tree
 
     In order to build the following binary tree:
-    ```
-                5
-               / \
-              2   7
-             / \   \
-            1   4   8
-    ```
+    >               5
+    >              / \
+    >             2   7
+    >            / \   \
+    >           1   4   8
+    >            \     /
+    >             0   9
+
+    i.e.
+    >               5
+    >             /   \
+    >            /     \
+    >           /       \
+    >          2         7
+    >        /   \     /   \
+    >       1     4   ∅     8
+    >      / \   / \       /
+    >     ∅   0 ∅   ∅     9
+    > **Note:** `∅` represents empty node.
+
     We may call function `makeTree` like this:
     ```c++
-    TreeNode *root = makeTree({ 5,2,7,1,4,null,8 });
+    TreeNode *root = makeTree({ 5,2,7,1,4,null,8,null,0,null,null,9 });
     ```
     **Note:** `null` represents an empty node. This is compatible with leetcode.
 

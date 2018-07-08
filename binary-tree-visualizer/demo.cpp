@@ -6,12 +6,15 @@
 int main()
 {
 	// build a binary tree like this:
-	//        5
-	//       / \
-	//      2   7
-	//     / \   \
-	//    1   4   8
-	TreeNode *root = makeTree({ 5,2,7,1,4,null,8 });
+	//        5                       5
+	//       / \                   /     \
+	//      2   7                 2       7
+	//     / \   \     -->      /   \    / \
+	//    1   4   8    -->     1     4  n   8
+	//     \     /            / \   / \    /
+	//      0   9            n   0 n   n  9
+	// Note: `n` represents null (empty node).
+	TreeNode *root = makeTree({ 5,2,7,1,4,null,8,null,0,null,null,9 });
 	try
 	{
 		// visualize the binary tree using GraphViz.

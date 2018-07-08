@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void delList(ListNode * p)
+void delList(ListNode * p) noexcept
 {
 	while (p)
 	{

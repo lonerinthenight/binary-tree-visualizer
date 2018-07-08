@@ -25,7 +25,7 @@ struct TreeNode
 	 * 
 	 * @param x Value of the tree node
 	 */
-	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+	TreeNode(int x) noexcept : val(x), left(nullptr), right(nullptr) {}
 };
 
 /**
@@ -42,10 +42,9 @@ struct TreeNode
  *                   1   4   8
  * ```
  *                can be represented by { 5, 2, 7, 1, 4, null, 8 }
- * @param i       (Optional) The start index in the array `values`.
  * @return        The root of the binary tree.
  */
-extern TreeNode * makeTree(const std::vector<int> & values, int i = 0) noexcept;
+extern TreeNode * makeTree(const std::vector<int> & values);
 
 /**
  * @brief Delete a binary tree
@@ -54,7 +53,7 @@ extern TreeNode * makeTree(const std::vector<int> & values, int i = 0) noexcept;
  *
  * @note  We recommend you to set `root` to `nullptr` after deleting it.
  */
-extern void delTree(TreeNode * root);
+extern void delTree(TreeNode * root) noexcept;
 
 /**
  * @brief Visualize a binary tree using GraphViz

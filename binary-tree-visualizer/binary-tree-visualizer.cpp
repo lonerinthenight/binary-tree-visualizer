@@ -93,18 +93,56 @@ N {
 })";
 
 
-TreeNode * makeTree(const vector<int> & values, int i) noexcept
+TreeNode * makeTree(const vector<int> & values)
 {
-	if (i >= values.size() || values[i] == null)
+	if (values.empty())
 		return nullptr;
-	TreeNode * root = new TreeNode(values[i]);
-	root->left = makeTree(values, i * 2 + 1);
-	root->right = makeTree(values, i * 2 + 2);
-	return root;
+	// 记录每一层的非空节点
+	vector<vector<TreeNode *>> nodes = { {new TreeNode(values.front()) } };
+	// 父结点的层数及其在该层中的索引
+	size_t parentLevel = 0, parentIndex = 0;
+	// 遍历数组values
+	for (auto it = ++values.begin(), end = values.end(); it != end; )
+	{
+		if (parentLevel >= nodes.size() || parentIndex >= nodes[parentLevel].size())
+			throw runtime_error("Failed to build binary tree. Please check your node values.");
+		TreeNode *parent = nodes[parentLevel][parentIndex];
+		// 构建左节点
+		if (*it != null)
+		{
+			parent->left = new TreeNode(*it);
+			if (parentLevel + 1 >= nodes.size())	// 当前层的第一个节点
+				nodes.push_back({ parent->left });	// 增加一层
+			else									// 当前层非第一个节点
+				nodes[parentLevel + 1].push_back(parent->left);
+		}
+		if (++it == end)	// 超过数组长度，结束
+			break;
+		// 构建右节点
+		if (*it != null)
+		{
+			parent->right = new TreeNode(*it);
+			if (parentLevel + 1 >= nodes.size())	// 当前层的第一个节点
+				nodes.push_back({ parent->right });
+			else									// 当前层非第一个节点
+				nodes[parentLevel + 1].push_back(parent->right);
+		}
+		if (++it == end)	// 超过数组长度，结束
+			break;
+		// 改变parent指向的位置
+		if (parentIndex + 1 < nodes[parentLevel].size())
+			parentIndex++;	// 当前Parent层的下一个节点
+		else
+		{
+			parentLevel++;	// 转到Parent层的下一层
+			parentIndex = 0;
+		}
+	}
+	return nodes.front().front();
 }
 
 
-void delTree(TreeNode * root)
+void delTree(TreeNode * root) noexcept
 {
 	if (!root)
 		return;
