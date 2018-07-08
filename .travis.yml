@@ -7,4 +7,5 @@ script:
   - make
 after_script:
   - ./demo
-  - gcovr -r .
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
