@@ -39,7 +39,7 @@ void showList(const ListNode *head)
 	if(int ret = system("dot list.dot | neato -n -Tpng -o list.png"))
 	{
 		stringstream ss;
-		ss << "GraphViz command failed exit code " << ret;
+		ss << "GraphViz command failed with exit code " << ret;
 		throw runtime_error(ss.str());
 	}
 

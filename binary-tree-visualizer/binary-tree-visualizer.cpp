@@ -185,7 +185,7 @@ void showTree(const TreeNode *root)
 	if (int ret = system("dot tree.dot | gvpr -c -f binarytree.gvpr | neato -n -Tpng -o tree.png"))
 	{
 		stringstream ss;
-		ss << "GraphViz command failed exit code " << ret;
+		ss << "GraphViz command failed with exit code " << ret;
 		throw runtime_error(ss.str());
 	}
 	// 显示图片

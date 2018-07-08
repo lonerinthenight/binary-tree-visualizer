@@ -1,9 +1,10 @@
 language: c++
 install:
   - sudo apt-get update
-  - sudo apt-get install -y graphviz
+  - sudo apt-get install -y graphviz gcovr
 script:
   - cd binary-tree-visualizer
   - make
 after_script:
   - ./demo
+  - gcovr -r .
